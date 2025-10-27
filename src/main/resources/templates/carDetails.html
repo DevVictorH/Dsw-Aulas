@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="'Detalhes de ' + ${car.name}">Detalhes do Carro</title>
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" th:href="@{/}">CarStore</a>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <img th:src="@{'/img/' +${car.name}+'.png'}" class="img-fluid rounded" alt="Car image">
+    </div>
+    <div class="col-md-6">
+      <h2 th:text="${car.name}">Nome do carro</h2>
+      <p><strong>Cor:</strong> <span th:text="${car.color}"></span></p>
+      <p><strong>Detalhes do carro:</strong> <span>
+        o carro combina design moderno, conforto e tecnologia de ponta
+        para oferecer uma experiência de direção única. com desempenho
+        eficiente e ótimo acabamento interno, é ideal tanto para o dia a
+        dia quanto para longas viagens. seu visual marcante e recursos
+        avançados de segurança garantem praticidade, estilo e tranquilidade
+        em qualquer trajeto.
+      </span></p>
+      <p><strong>ID:</strong> <span th:text="${car.id}"></span></p>
+
+      <a th:href="@{/}" class="btn btn-secondary mt-3">voltar</a>
+    </div>
+  </div>
+</div>
+
+<script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
